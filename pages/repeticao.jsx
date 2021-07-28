@@ -1,3 +1,4 @@
+import Titulo from './components/Titulo';
 export default function Repeticao() {
 
     const listaAprovados = [
@@ -13,18 +14,16 @@ export default function Repeticao() {
         const itens = []
 
         for (let i = 0; i < listaAprovados.length; i++) {
-            itens.push(
-                <li key={i}>
-                    {listaAprovados[i]}
-                </li>
+            itens.push(<li key={i}>{listaAprovados[i]}</li>
             )
         }
         return itens
     }
 
     return (
-        <div>
-            {renderizarLista}
-        </div>
+        <ol>
+            <Titulo titulo="Listagem" />
+            {renderizarLista()}
+        </ol>
     );
 }
